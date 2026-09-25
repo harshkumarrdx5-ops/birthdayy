@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Niyati 💗</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #63334b;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 10% 10%, #ffd1e3, transparent 32%),
+    radial-gradient(circle at 90% 90%, #e5c8ff, transparent 32%),
+    linear-gradient(135deg, #fff5f8, #ffe3ee);
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 16px 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating hearts */
+
+.heart {
+  position: fixed;
+  bottom: -50px;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .8;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Hero */
+
+.hero {
+  min-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.small {
+  color: #b64b73;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.main-heart {
+  font-size: 65px;
+  animation: beat 1.3s infinite;
+}
+
+@keyframes beat {
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: clamp(4rem, 18vw, 6rem);
+  color: #d83f76;
+  line-height: .9;
+  text-shadow: 0 6px 20px rgba(216,63,118,.18);
+}
+
+.birthday {
+  margin-top: 20px;
+  font-size: clamp(1.5rem, 7vw, 2.5rem);
+  font-weight: 600;
+  color: #702d4d;
+}
+
+.subtitle {
+  max-width: 500px;
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.btn {
+  margin-top: 28px;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(135deg,#ed5889,#c93669);
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(201,54,105,.3);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(.95);
+}
+
+/* Message */
+
+.message {
+  display: none;
+  padding: 30px 21px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.76);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 18px 45px rgba(112,42,76,.13);
+  animation: appear .8s ease;
+}
+
+.message.show {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message h2 {
+  text-align: center;
+  color: #d83f76;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.message p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.highlight {
+  color: #d83f76;
+  font-weight: 700;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Gallery */
+
+.gallery-section {
+  text-align: center;
+}
+
+.gallery-section h2 {
+  color: #c93669;
+  font-size: 24px;
+}
+
+.gallery-info {
+  margin: 8px 0 18px;
+  color: #9b6078;
+  font-size: 13px;
+}
+
+.gallery {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 8px 5px 25px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.photo {
+  position: relative;
+  min-width: 86%;
+  height: 430px;
+  scroll-snap-align: center;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 5px solid rgba(255,255,255,.9);
+  box-shadow: 0 15px 35px rgba(160,55,100,.2);
+  background: white;
+}
+
+.photo:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo span {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+  font-size: 32px;
+  animation: beat 1.3s infinite;
+}
+
+.gallery-caption {
+  margin-top: 5px;
+  font-style: italic;
+  line-height: 1.8;
+  color: #9b4266;
+}
+
+/* Final */
+
+.final {
+  margin-top: 45px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#ffd9e7,#eadcff);
+  box-shadow: 0 15px 35px rgba(120,60,100,.12);
+}
+
+.final-heart {
+  font-size: 48px;
+  animation: beat 1.3s infinite;
+}
+
+.final h2 {
+  margin-top: 12px;
+  color: #d83f76;
+}
+
+.final p {
+  margin-top: 15px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #a45c78;
+  font-size: 13px;
+}
+
+/* Confetti */
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 14px;
+  z-index: 100;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+
+<div class="heart" style="left:5%;animation-duration:8s">💗</div>
+<div class="heart" style="left:18%;animation-duration:11s;animation-delay:2s">💕</div>
+<div class="heart" style="left:35%;animation-duration:9s;animation-delay:1s">💖</div>
+<div class="heart" style="left:55%;animation-duration:12s;animation-delay:3s">💗</div>
+<div class="heart" style="left:75%;animation-duration:10s">💕</div>
+<div class="heart" style="left:90%;animation-duration:13s;animation-delay:2s">💖</div>
+
+
+<div class="container">
+
+  <!-- Opening -->
+
+  <section class="hero">
+
+    <div class="small">
+      A little surprise for someone special... 💌
+    </div>
+
+    <div class="main-heart">💗</div>
+
+    <h1>Niyati</h1>
+
+    <div class="birthday">
+      Happy Birthday! 🎂✨
+    </div>
+
+    <p class="subtitle">
+      Today isn't just another day...
+      it's the day someone incredibly special
+      came into this world. 💕
+    </p>
+
+    <button class="btn" onclick="surprise()">
+      💌 Tap for your surprise
+    </button>
+
+  </section>
+
+
+  <!-- Message -->
+
+  <section id="message" class="message">
+
+    <h2>For You, Niyati 💕</h2>
+
+    <p>
+      Happy Birthday to the girl who makes ordinary
+      moments feel a little more magical. ✨
+    </p>
+
+    <br>
+
+    <p>
+      You are honestly one of my
+      <span class="highlight">favourite people</span>
+      in this whole world.
+    </p>
+
+    <br>
+
+    <p>
+      There’s just something about you that makes
+      everything feel a little brighter and every
+      moment a little more special. 🥹💕
+    </p>
+
+    <br>
+
+    <p>
+      I hope you always know how precious you are to me.
+      Your smile, your little habits, your way of making
+      things better without even trying — I love all those
+      little things about you. ✨
+    </p>
+
+    <br>
+
+    <p>
+      You deserve all the
+      <span class="highlight">
+        happiness, love, and beautiful moments
+      </span>
+      in the world.
+    </p>
+
+    <br>
+
+    <p>
+      Thank you for simply being you. ❤️
+    </p>
+
+    <br>
+
+    <p class="center">
+      You’re not just someone special to me...
+      <br><br>
+      <span class="highlight">
+        You’re my favourite person. 💗
+      </span>
+    </p>
+
+    <br>
+
+    <p>
+      Happy Birthday, Niyati. 🎂
+      I hope this year brings you countless reasons
+      to smile — and I hope I get to be there for
+      many of them. 🫶✨
+    </p>
+
+    <br>
+
+    <p class="center">
+      Always keep smiling, birthday girl. 🎀💗
+    </p>
+
+  </section>
+
+
+  <!-- Photos -->
+
+  <section class="gallery-section">
+
+    <h2>My Favourite Memories of You 💞</h2>
+
+    <p class="gallery-info">
+      Swipe left and right to see your photos → 💗
+    </p>
+
+    <div class="gallery">
+
+      <div class="photo">
+        <img src="niyati1.jpg" alt="Niyati">
+        <span>💗</span>
+      </div>
+
+      <div class="photo">
+        <img src="niyati2.jpg" alt="Niyati">
+        <span>💕</span>
+      </div>
+
+      <div class="photo">
+        <img src="niyati3.jpg" alt="Niyati">
+        <span>💖</span>
+      </div>
+
+    </div>
+
+    <p class="gallery-caption">
+      Every picture has a different version of you...
+      <br>
+      and somehow, I love them all. 🥹💗
+    </p>
+
+  </section>
+
+
+  <!-- Final -->
+
+  <section class="final">
+
+    <div class="final-heart">💗</div>
+
+    <h2>One Last Thing...</h2>
+
+    <p>
+      Some people make the world beautiful
+      simply by being in it.
+    </p>
+
+    <p>
+      And for me,
+      <span class="highlight">
+        you're one of those people.
+      </span>
+    </p>
+
+    <p>
+      Happy Birthday, Niyati. 🎂🌸
+      <br>
+      Keep smiling.
+      Keep shining.
+      Keep being you. ❤️
+    </p>
+
+    <p>
+      You will always have a very special
+      place in my heart. 🫶
+    </p>
+
+  </section>
+
+
+  <footer>
+    Made with ❤️ just for Niyati
+    <br><br>
+    ✨ Happy Birthday, beautiful ✨
+  </footer>
+
+</div>
+
+
+<script>
+
+function surprise() {
+
+  const message = document.getElementById("message");
+
+  message.classList.add("show");
+
+  createConfetti();
+
+  setTimeout(() => {
+
+    message.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  }, 200);
+}
+
+
+function createConfetti() {
+
+  const colors = [
+    "#ff4f81",
+    "#ff9fba",
+    "#d86cff",
+    "#ffd166",
+    "#ffffff",
+    "#ff6b9a"
+  ];
+
+  for (let i = 0; i < 100; i++) {
+
+    const piece = document.createElement("div");
+
+    piece.className = "confetti";
+
+    piece.style.left =
+      Math.random() * 100 + "vw";
+
+    piece.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    piece.style.animationDuration =
+      (2 + Math.random() * 3) + "s";
+
+    piece.style.animationDelay =
+      Math.random() * .5 + "s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(() => {
+      piece.remove();
+    }, 5000);
+  }
+}
+
+</script>
+
+</body>
+</html>
